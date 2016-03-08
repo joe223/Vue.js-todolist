@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Wallpoet' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="app">
+        <form class="shadow" v-on:submit.prevent="add">
+            <h1 class="title">TODOS</h1>
+            <ul>
+                <li class="user" v-for="list in todolist" transition="li">
+                    <span class="asd" v-bind:class="{ 'complete': list.completed, }">{{ list.details }}</span>
+                    <button class="del-btn" v-on:click="del($index)" type="button" name="button">✖</button>
+                    <button class="complete-btn" v-on:click="complete($index)"  type="button" name="button">✓</button>
+                </li>
+            </ul>
+            <div class="input-group">
+                <input  v-model="newTodo"  type="text" maxlength="20" required>
+                <button class="add-btn" v-on:click="add" type="submit" name="button">+</button>
+            </div>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</body>
+</html>
