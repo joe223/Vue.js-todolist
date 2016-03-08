@@ -1,3 +1,7 @@
+/**
+ * @author joe
+ * @time 2016-3-9 00:10
+ */
 Vue.config.debug = true;
 var vue  = new Vue({
     el:'#app',
